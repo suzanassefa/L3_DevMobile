@@ -1,32 +1,39 @@
 <template>
-    <div class="home">
-        <ul>
-            // liste des todos (liste de listes)
-            <li v-for="todo in listetodos" v-bind:key="todo.id">
-                <todo :id="todo.id"></todo>
-            </li>
-        </ul>
+    <div>
+    <p>{{ getTodoId.id }}</p>
+    <p>{{ getTodoId.name }}</p>
+    <p>{{ getTodoId.done }}</p>
+
+
     </div>
 </template>
+
 <script>
-    import {  mapGetters } from "vuex";
+    import { mapGetters } from "vuex";
 
     export default {
+
         name: 'Sidebar',
-         
+       
         data() {
             return {
                 
             }
         },
-        
-      
-        methods: {
-            //...mapActions("todolist", ['à définir']),
+        // identifiant du listetodos, grâce à props, accéder à this.id
+        props: {
+            id: {type: String, default: "1"}
         },
-        
-        computed: {
-            ...mapGetters("todolist", ['listetodos'])
+        computed:{
+        // données de mon listetodos ("fichier json") dans le store immo
+            ...mapGetters('todolist', ['getTodoId']),
+
+            todo() {
+                return this.getTodoId(this.id)
+
+            }
+           
         }
     }
+
 </script>

@@ -1,4 +1,4 @@
-export function listetodos(state) {
+export const listetodos = (state) => {
 
     return state.todos;
 }
@@ -6,7 +6,7 @@ export function listetodos(state) {
 //parcourt la todos pour trouver une todo avec le même id qu en parammètre
 export const getTodoId = (state) => (id) => {
 
-        return state.todos.find((todoItem) => todoItem.id === id);
+        return state.todos.find((todolist) => todolist.id === id);
     
     
 

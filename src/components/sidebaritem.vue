@@ -1,39 +1,31 @@
 <template>
-    <div>
-    <p>{{ getTodoId.id }}</p>
-    <p>{{ getTodoId.name }}</p>
-    <p>{{ getTodoId.done }}</p>
-
-
+    <div class="home">
+        <ul>
+            <li v-for="todo in listetodos" v-bind:key="{todo}">
+                {{todo.id}} : {{todo.name}} - {{todo.done}} 
+            </li>
+        </ul>
     </div>
 </template>
-
 <script>
-    import { mapGetters } from "vuex";
+    import {  mapGetters } from "vuex";
 
     export default {
-
         name: 'Sidebaritem',
-       
+         
         data() {
             return {
                 
             }
         },
-        // identifiant du listetodos, grâce à props, accéder à this.id
-        props: {
-            id: {type: String, default: "1"}
+        
+      
+        methods: {
+            //...mapActions("todolist", ['à définir']),
         },
-        computed:{
-        // données de mon listetodos ("fichier json") dans le store immo
-            ...mapGetters('todolist', ['getTodoId']),
-
-            todo() {
-                return this.getTodoId(this.id)
-
-            }
-           
+        
+        computed: {
+            ...mapGetters("todolist", ['listetodos'])
         }
     }
-
 </script>
