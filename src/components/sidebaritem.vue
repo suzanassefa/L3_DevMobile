@@ -3,8 +3,8 @@
         <ul class="todos-list">
             <li v-for="todo in listetodos" v-bind:key="todo.id">
                 <span class="todo-content" :class="{done: todo.done }"
-                @click="markItDone(todo);"> {{todo.id}} : {{todo.name}} </span>
-                <span class="del-todo" @click="deleteTodo(todo);">Delete</span>
+                @click="completeTodo(todo);"> {{todo.id}} : {{todo.name}} </span>
+                <span class="del-todo" @click="removeTodo(todo);">Delete</span>
             </li>
         </ul>
     </div>
@@ -23,7 +23,7 @@
         
       
         methods: {
-            ...mapActions("todolist", ['todo']),
+            ...mapActions("todolist", ['completeTodo']),
 
         },
         

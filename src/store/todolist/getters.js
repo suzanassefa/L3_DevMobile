@@ -13,12 +13,18 @@ export const getTodoId = (state) => (id) => {
     }
 
 // parcourt todos à la rechere d'un todo à true
-export const doneTodo = (state) => {
+export const completedTodos = (state) => {
         return state.todos.filter(todo => todo.done);
     }
-// parcourt todos à la rechere d'un todo à false
-export const activeTodos = (state) => { 
+
+
+//newTodo returns the value of the new todo entered by the user. This value is bound to the input
+export const newTodo = (state) => { state.newTodo; }
+
+// parcourt todos à la rechere d'un todo à false et affiche un tableau d etodo a false
+export const activetodos = (state) => {
     return state.todos.filter(todo => !todo.done);
-}
+}   
+
 
 
