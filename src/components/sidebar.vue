@@ -3,8 +3,6 @@
     <p>{{ getTodoId.id }}</p>
     <p>{{ getTodoId.name }}</p>
     <p>{{ getTodoId.done }}</p>
-
-
     </div>
 </template>
 
@@ -20,12 +18,10 @@
                 
             }
         },
-        // identifiant du listetodos, grâce à props, accéder à this.id
         props: {
             id: {type: String, default: "1"}
         },
         computed:{
-        // données de mon listetodos ("fichier json") dans le store immo
             ...mapGetters('todolist', ['getTodoId']),
 
             todo() {
