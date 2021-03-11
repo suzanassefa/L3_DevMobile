@@ -6,8 +6,8 @@ export function  GET_TODO(state, todo){
     
 export function ADD_TODO(state){
       state.todos.push({
-        body: state.newTodo,
-        completed: false
+        name: state.newTodo,
+        done: false
       })
     }
         
@@ -15,7 +15,7 @@ export function EDIT_TODO(state, todo){
        var todos = state.todos
        todos.splice(todos.indexOf(todo), 1)
        state.todos = todos
-       state.newTodo = todo.body
+       state.newTodo = todo.name
     }
        
 export function REMOVE_TODO(state, todo){
@@ -24,7 +24,7 @@ export function REMOVE_TODO(state, todo){
     }
         
 export function COMPLETE_TODO(state, todo){
-      todo.completed = !todo.completed
+      todo.done = !todo.done
       console.log("ok");
     }
        

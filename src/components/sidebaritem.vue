@@ -2,7 +2,7 @@
     <div class="home">
         <ul class="todos-list">
             <li v-for="todo in listetodos" v-bind:key="todo.id">
-                <span class="todo-content" :class="{done: todo.done }"
+                <span class="todo-content" :class="{ done: todo.done }"
                 @click="completeTodo(todo);"> {{todo.id}} : {{todo.name}} </span>
                 <span class="del-todo" @click="removeTodo(todo);">Delete</span>
             </li>
