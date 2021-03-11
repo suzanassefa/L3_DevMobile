@@ -6,7 +6,6 @@ export default function () {
 			{ id: 3, name: 'Read one chapter', done: false },
 			{ id: 4, name: 'Buy socks', done: true }
 		],
-		newtodo: [],
-		
+		cpt:4,		
     }
 }

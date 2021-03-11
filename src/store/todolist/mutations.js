@@ -4,11 +4,13 @@ export function  GET_TODO(state, todo){
       state.newTodo = todo
     }
     
-export function ADD_TODO(state){
+export function ADD_TODO(state, todo){
       state.todos.push({
-        name: state.newTodo,
+        id: state.cpt + 1,
+        name: todo,
         done: false
       })
+      
     }
         
 export function EDIT_TODO(state, todo){

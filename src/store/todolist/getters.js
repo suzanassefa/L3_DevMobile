@@ -18,8 +18,7 @@ export const completedTodos = (state) => {
     }
 
 
-//newTodo returns the value of the new todo entered by the user. This value is bound to the input
-export const newTodo = (state) => { state.newTodo; }
+
 
 // parcourt todos à la rechere d'un todo à false et affiche un tableau d etodo a false
 export const activetodos = (state) => {

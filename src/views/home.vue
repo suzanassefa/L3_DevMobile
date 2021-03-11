@@ -1,19 +1,19 @@
 <template>
     <div class="home">
-        <Sidebaritem></Sidebaritem>
+        <TodoList></TodoList>
         <Sidebar></Sidebar>
 
     </div>
 </template>
 <script>
-    import Sidebaritem from '@/components/sidebaritem.vue';
+    import TodoList from '@/components/TodoList.vue';
     import Sidebar from '@/components/sidebar.vue';
 
 
     export default {
         name: 'Home',
         components: {
-            Sidebaritem,
+            TodoList,
             Sidebar
         },
         
